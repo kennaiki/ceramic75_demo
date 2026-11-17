@@ -13,7 +13,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2064%2064%22%3E%3Crect%20width%3D%2264%22%20height%3D%2264%22%20rx%3D%2214%22%20fill%3D%22%237cc8f0%22%2F%3E%3Ctext%20x%3D%2232%22%20y%3D%2243%22%20text-anchor%3D%22middle%22%20font-size%3D%2224%22%20font-family%3D%22Arial%2Csans-serif%22%20font-weight%3D%22700%22%20fill%3D%22%2306131c%22%3EC75%3C%2Ftext%3E%3C%2Fsvg%3E">
 <link rel="stylesheet" href="fonts/fonts.css">
 <style>
-:root{--bg:#0a0e13;--surface:#121922;--soft:#17212c;--ink:#e9f2f8;--mute:#92a5b5;--accent:#7cc8f0;--on-accent:#06131c;--accent-soft:#14293a;--line:#2b3b4b;--dark:#05080c;--on-dark:#e9f2f8;--live:#7cc8f0;--scrim:rgba(0,0,0,.72);--ov:rgba(6,10,14,.66);--r:22px;--rs:14px;--rm:50%;--rl:32px;--rb:999px;--bw:2px;--dw:700;--dtrack:-.025em;--dcase:none;--accent-h:#a2dafa;--accent-t:#7cc8f0;--live-a:#7cc8f0e6;--display:Manrope,system-ui,sans-serif;--text:Inter,system-ui,sans-serif}
+:root{--bg:#0a0e13;--surface:#121922;--soft:#17212c;--ink:#e9f2f8;--mute:#92a5b5;--accent:#7cc8f0;--on-accent:#06131c;--accent-soft:#14293a;--line:#2b3b4b;--dark:#05080c;--on-dark:#e9f2f8;--live:#7cc8f0;--scrim:rgba(0,0,0,.72);--ov:rgba(6,10,14,.74);--r:22px;--rs:14px;--rm:50%;--rl:32px;--rb:999px;--bw:2px;--dw:700;--dtrack:-.025em;--dcase:none;--accent-h:#a2dafa;--accent-t:#7cc8f0;--live-a:#7cc8f0e6;--display:Manrope,system-ui,sans-serif;--text:Inter,system-ui,sans-serif}
 /* Общая основа сайтов «Чита»: всё управляется переменными темы. Оформление, шрифты и композицию каждый сайт задаёт сам. */
 *{box-sizing:border-box;margin:0}
 [hidden]{display:none!important}
@@ -309,11 +309,12 @@ footer .legal a{display:inline-block;padding:12px 4px;margin:-12px -4px}
 
 .logo{font-weight:700;font-size:21px}
 .logo i{background:transparent;border:2px solid var(--accent);color:var(--accent);font:700 14px var(--display);border-radius:12px;min-width:46px}
-h1{font-size:clamp(38px,6vw,76px);line-height:1.04;max-width:13ch}
+h1{font-size:clamp(34px,5vw,62px);line-height:1.08;max-width:16ch;text-wrap:balance}
 .hero.v-full{min-height:min(82vh,700px)}
 .hero.v-full .pic{filter:saturate(.6) brightness(.9)}
-.hero .lead{font-size:19px;color:#d4e3ee}
-.facts b{color:var(--accent)}
+.hero .lead{font-size:18px;color:#e4eef6}
+.hero .btn.soft{background:rgba(5,8,12,.78);color:#e9f2f8;border-color:rgba(233,242,248,.5)}
+.facts b{color:var(--accent);font-size:26px}
 .drops{position:absolute;inset:0;pointer-events:none;z-index:0}
 .drops i{position:absolute;width:22px;height:30px;border-radius:50% 50% 50% 50% / 62% 62% 38% 38%;background:rgba(124,200,240,.22);border:2px solid rgba(124,200,240,.7)}
 .drops i:nth-child(1){right:12%;top:14%}
