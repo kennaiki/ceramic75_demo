@@ -21,8 +21,229 @@
  ],
  "services": [
   {
-   "name": "Защитное покрытие для ЛКП, 1 слой",
-   "group": "",
+   "name": "Полировка кузова",
+   "group": "Полировка и керамика",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 15000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Защитное керамическое покрытие для ЛКП, 1 слой",
+   "group": "Полировка и керамика",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 8000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Полировка фар",
+   "group": "Полировка и керамика",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 3000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Полировка стёкол",
+   "group": "Полировка и керамика",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 10000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Полировка лакированных деталей салона",
+   "group": "Полировка и керамика",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 5000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Оклейка зон риска полиуретановой плёнкой",
+   "group": "Плёнка и бронирование",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 60000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Полная оклейка антигравийной плёнкой",
+   "group": "Плёнка и бронирование",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 200000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Оклейка оптики",
+   "group": "Плёнка и бронирование",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 6000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Оклейка оптики полиуретановой плёнкой с затемнением 50%",
+   "group": "Плёнка и бронирование",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 6000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Фотохромная полиуретановая плёнка на фары",
+   "group": "Плёнка и бронирование",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 6000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Защита зон под ручками",
+   "group": "Плёнка и бронирование",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 3000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Бронирование лобового стекла",
+   "group": "Плёнка и бронирование",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 20000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Оклейка крыши в чёрный полиуретан",
+   "group": "Плёнка и бронирование",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 20000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Тонирование лобового стекла",
+   "group": "Стёкла и тонировка",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 3000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Тонирование передних боковых стёкол",
+   "group": "Стёкла и тонировка",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 3000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Тонирование передней полусферы",
+   "group": "Стёкла и тонировка",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 7000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Тонирование задней полусферы",
+   "group": "Стёкла и тонировка",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 7000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Оклейка атермальной плёнкой (лобовое стекло)",
+   "group": "Стёкла и тонировка",
    "desc": "",
    "request": true,
    "prices": {
@@ -35,7 +256,72 @@
   },
   {
    "name": "Защитные покрытия для стёкол, антидождь",
-   "group": "",
+   "group": "Стёкла и тонировка",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 4000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Ремонт сколов на стёклах",
+   "group": "Стёкла и тонировка",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 1000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Химчистка салона",
+   "group": "Салон",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 15000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Детейлинг уборка салона",
+   "group": "Салон",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 1500,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Сухой туман",
+   "group": "Салон",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 2000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Чистка кожи",
+   "group": "Салон",
    "desc": "",
    "request": true,
    "prices": {
@@ -47,21 +333,8 @@
    }
   },
   {
-   "name": "Полировка кузова",
-   "group": "",
-   "desc": "",
-   "request": true,
-   "prices": {
-    "Любой автомобиль": {
-     "price": 15000,
-     "minutes": null,
-     "from": true
-    }
-   }
-  },
-  {
-   "name": "Полировка фар",
-   "group": "",
+   "name": "Обработка кожи составами Q2",
+   "group": "Салон",
    "desc": "",
    "request": true,
    "prices": {
@@ -73,21 +346,21 @@
    }
   },
   {
-   "name": "Химчистка салона",
-   "group": "",
+   "name": "Керамический состав для кожи",
+   "group": "Салон",
    "desc": "",
    "request": true,
    "prices": {
     "Любой автомобиль": {
-     "price": 15000,
+     "price": 10000,
      "minutes": null,
      "from": true
     }
    }
   },
   {
-   "name": "Детейлинг-мойка двигателя",
-   "group": "",
+   "name": "PDR — беспокрасочное удаление вмятин на кузове",
+   "group": "Кузов и мойка",
    "desc": "",
    "request": true,
    "prices": {
@@ -99,26 +372,52 @@
    }
   },
   {
-   "name": "Оклейка зон риска полиуретановой плёнкой",
-   "group": "",
+   "name": "Удаление сколов и царапин без покраски",
+   "group": "Кузов и мойка",
    "desc": "",
    "request": true,
    "prices": {
     "Любой автомобиль": {
-     "price": 60000,
+     "price": 1500,
      "minutes": null,
      "from": true
     }
    }
   },
   {
-   "name": "Тонирование задней полусферы",
-   "group": "",
+   "name": "Антихром",
+   "group": "Кузов и мойка",
    "desc": "",
    "request": true,
    "prices": {
     "Любой автомобиль": {
-     "price": 7000,
+     "price": 1000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Двухфазная детейлинг мойка",
+   "group": "Кузов и мойка",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 1500,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Детейлинг мойка двигателя",
+   "group": "Кузов и мойка",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 2000,
      "minutes": null,
      "from": true
     }

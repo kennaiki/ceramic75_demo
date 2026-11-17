@@ -251,8 +251,14 @@ function isReq(){ var s = curSvc(); return !!(s && s.request); }
 function curMin(){ var p = pOf(curSvc(), levelEl.value); return p && p.minutes ? p.minutes : DUR; }
 function fillServices(want){
   var keep = want || svcEl.value; svcEl.innerHTML = '';
+  // если у услуг заданы две и более группы (категории), список в форме разбивается на группы; без групп он плоский, как раньше
+  var groups = MAIN.reduce(function(a, s){ if (s.group && a.indexOf(s.group) < 0) a.push(s.group); return a; }, []), box = {};
   MAIN.forEach(function(s){ var p = pOf(s, levelEl.value); if (!p) return;
-    var o = el('option', '', s.name + (s.request ? ' — заявка' : known(p) ? ' — ' + priceLine(p) : '')); o.value = s.name; svcEl.appendChild(o); });
+    var o = el('option', '', s.name + (s.request ? ' — заявка' : known(p) ? ' — ' + priceLine(p) : '')); o.value = s.name;
+    var g = groups.length > 1 ? (s.group || 'Другое') : '';
+    if (!g){ svcEl.appendChild(o); return; }
+    if (!box[g]){ box[g] = document.createElement('optgroup'); box[g].label = g; svcEl.appendChild(box[g]); }
+    box[g].appendChild(o); });
   svcEl.value = keep; if (svcEl.selectedIndex < 0) svcEl.selectedIndex = 0;
 }
 function fillExtras(){
@@ -262,10 +268,33 @@ function fillExtras(){
     lb.appendChild(cb); lb.appendChild(el('span', '', s.name)); lb.appendChild(el('b', '', priceLine(p))); exEl.appendChild(lb); });
 }
 function chosenExtras(){ return [].map.call(exEl.querySelectorAll('input:checked'), function(i){ return i.value; }); }
+// заявка на расчёт: можно отметить сразу несколько услуг (основная в списке, остальные галочками, по категориям, если они заданы)
+var exReqEl = document.getElementById('ex-req'), moreReq = document.getElementById('more-req');
+var REQS = MAIN.filter(function(s){ return s.request; });
+function chosenReq(){ return [].map.call(exReqEl.querySelectorAll('input:checked'), function(i){ return i.value; }); }
+function countReq(){ var n = chosenReq().length; document.getElementById('more-req-s').textContent = 'Добавить ещё услуги' + (n ? ' · выбрано ' + n : ''); }
+function fillReqExtras(){
+  var on = chosenReq(), cur = svcEl.value; exReqEl.innerHTML = '';
+  var groups = REQS.reduce(function(a, s){ if (s.group && a.indexOf(s.group) < 0) a.push(s.group); return a; }, []), seen = {};
+  REQS.forEach(function(s){ if (s.name === cur) return; var p = pOf(s, levelEl.value); if (!p) return;
+    var g = groups.length > 1 ? (s.group || 'Другое') : '';
+    if (g && !seen[g]){ seen[g] = 1; exReqEl.appendChild(el('div', 'exh', g)); }
+    var lb = el('label'), cb = el('input'); cb.type = 'checkbox'; cb.value = s.name; cb.checked = on.indexOf(s.name) >= 0;
+    cb.onchange = function(){ countReq(); renderSum(); };
+    lb.appendChild(cb); lb.appendChild(el('span', '', s.name)); lb.appendChild(el('b', '', priceLine(p))); exReqEl.appendChild(lb); });
+  countReq();
+}
 function renderSum(){
   var t = document.getElementById('sum'); t.textContent = '';
   var s = curSvc(), p = pOf(s, levelEl.value); if (!s || !p) return;
-  if (s.request){ var l0 = el('span', '', 'Стоимость'); l0.appendChild(el('small', '', 'считаем после осмотра автомобиля')); t.appendChild(l0); t.appendChild(el('b', known(p) ? '' : 'ask', priceLine(p))); return; }
+  if (s.request){
+    var more = chosenReq();
+    if (more.length){ // несколько услуг: сумма «от» по тем, у кого цена известна
+      var tot = 0, unk = 0; [s.name].concat(more).forEach(function(n){ var q = pOf(svcByName(n), levelEl.value); if (known(q)) tot += q.price; else unk++; });
+      var l1 = el('span', '', 'Выбрано услуг: ' + (more.length + 1)); l1.appendChild(el('small', '', 'точную стоимость назовём после осмотра' + (unk ? ', у части цена уточняется' : '')));
+      t.appendChild(l1); t.appendChild(el('b', tot ? '' : 'ask', tot ? 'от ' + money(tot) : 'цена уточняется')); return;
+    }
+    var l0 = el('span', '', 'Стоимость'); l0.appendChild(el('small', '', 'считаем после осмотра автомобиля')); t.appendChild(l0); t.appendChild(el('b', known(p) ? '' : 'ask', priceLine(p))); return; }
   var total = 0, unknown = !known(p), from = !!p.from, ex = chosenExtras();
   if (known(p)) total += p.price;
   ex.forEach(function(n){ var q = pOf(svcByName(n), levelEl.value); if (known(q)){ total += q.price; if (q.from) from = true; } else unknown = true; });
@@ -280,6 +309,7 @@ function syncMode(){ // заявка на расчёт: без дня и вре�
   document.getElementById('dtitle-t').textContent = r ? 'Заявка на расчёт' : document.getElementById('dtitle-t').dataset.book;
   form.querySelector('button[type=submit]').textContent = r ? 'Отправить заявку' : 'Записаться';
   document.getElementById('more').hidden = r || !EXTRAS.length;
+  moreReq.hidden = !r || REQS.length < 2; if (r) fillReqExtras();
 }
 
 nameEl.addEventListener('input', function(){
@@ -387,7 +417,7 @@ form.addEventListener('submit', async function(e){
   var btn = form.querySelector('button[type=submit]'), label = btn.textContent;
   btn.disabled = true; btn.textContent = 'Отправляем...';
   var data = req
-    ? {request: true, name: nameEl.value, phone: phoneEl.value, level: levelEl.value, service: svcEl.value, car: form.elements['car'].value,
+    ? {request: true, name: nameEl.value, phone: phoneEl.value, level: levelEl.value, service: svcEl.value, extras: chosenReq(), car: form.elements['car'].value,
        comment: form.elements['comment'].value, consent: form.elements['consent'].checked, hp: form.elements['website'].value}
     : {name: nameEl.value, phone: phoneEl.value, level: levelEl.value, service: svcEl.value, extras: chosenExtras(), master: 'any',
        date: selDate.iso, time: selTime, label: fullDate(selDate.d), consent: form.elements['consent'].checked, hp: form.elements['website'].value};
