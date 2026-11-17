@@ -1,0 +1,145 @@
+{
+ "ahead": 14,
+ "shop": {
+  "note": "",
+  "phone2": "",
+  "email": "",
+  "vk": "https://vk.ru/ceramic__75",
+  "tg": "https://t.me/+79965158813",
+  "name": "Ceramic 75",
+  "address": "ул. Карла Маркса, 15, Чита",
+  "phone": "+7 (996) 515-88-13",
+  "hours": [
+   [
+    "Ежедневно",
+    "10:00–20:00"
+   ]
+  ]
+ },
+ "levels": [
+  "Любой автомобиль"
+ ],
+ "services": [
+  {
+   "name": "Защитное покрытие для ЛКП, 1 слой",
+   "group": "",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 10000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Защитные покрытия для стёкол, антидождь",
+   "group": "",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 5000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Полировка кузова",
+   "group": "",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 15000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Полировка фар",
+   "group": "",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 3000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Химчистка салона",
+   "group": "",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 15000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Детейлинг-мойка двигателя",
+   "group": "",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 3000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Оклейка зон риска полиуретановой плёнкой",
+   "group": "",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 60000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  },
+  {
+   "name": "Тонирование задней полусферы",
+   "group": "",
+   "desc": "",
+   "request": true,
+   "prices": {
+    "Любой автомобиль": {
+     "price": 7000,
+     "minutes": null,
+     "from": true
+    }
+   }
+  }
+ ],
+ "masters": [
+  {
+   "id": "m1",
+   "name": "Приём заявок",
+   "level": "Любой автомобиль",
+   "exp": "",
+   "hours": {
+    "Пн": "10:00-20:00",
+    "Вт": "10:00-20:00",
+    "Ср": "10:00-20:00",
+    "Чт": "10:00-20:00",
+    "Пт": "10:00-20:00",
+    "Сб": "10:00-20:00",
+    "Вс": "10:00-20:00"
+   }
+  }
+ ]
+}
